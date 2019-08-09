@@ -132,7 +132,7 @@ namespace ACT_quickFFlogsPerf
             {
                 Log("update start.");
 
-                WebRequest webrequest = WebRequest.Create("https://raw.githubusercontent.com/Qofar/ACT_quickFFlogsPerf/master/fflogsPerf.json");
+                WebRequest webrequest = WebRequest.Create("https://github.com/Qofar/ACT_quickFFlogsPerf/raw/master/fflogsPerf.json");
                 using (WebResponse response = webrequest.GetResponse())
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))
                 {
