@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACT_quickFFlogsPerf", "ACT_quickFFlogsPerf\ACT_quickFFlogsPerf.csproj", "{0E1BBD61-2B56-4470-9AF9-AE3F544853F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E1BBD61-2B56-4470-9AF9-AE3F544853F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1BBD61-2B56-4470-9AF9-AE3F544853F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1BBD61-2B56-4470-9AF9-AE3F544853F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1BBD61-2B56-4470-9AF9-AE3F544853F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB73F5DF-559F-4F85-A814-EBF2E0B29512}
+	EndGlobalSection
+EndGlobal
