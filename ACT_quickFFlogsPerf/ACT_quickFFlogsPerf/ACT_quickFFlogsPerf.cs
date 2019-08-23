@@ -11,6 +11,7 @@ namespace ACT_quickFFlogsPerf
     public class ACT_quickFFlogsPerf : IActPluginV1
     {
         private const string PERF_FILE_NAME = "fflogsPerf.json";
+        private const string PERF_BACKUP_FILE_NAME = "fflogsPerf.back";
 
         enum EncType
         {
@@ -132,6 +133,11 @@ namespace ACT_quickFFlogsPerf
             {
                 Log("update start.");
 
+                if (File.Exists(PERF_FILE_NAME))
+                {
+                    File.Move(PERF_FILE_NAME, PERF_BACKUP_FILE_NAME);
+                }
+
                 WebRequest webrequest = WebRequest.Create("https://github.com/Qofar/ACT_quickFFlogsPerf/raw/master/fflogsPerf.json");
                 using (WebResponse response = webrequest.GetResponse())
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))
@@ -141,9 +147,16 @@ namespace ACT_quickFFlogsPerf
                 }
 
                 LoadJson();
+
+                File.Delete(PERF_BACKUP_FILE_NAME);
             }
             catch (Exception ex)
             {
+                if (File.Exists(PERF_BACKUP_FILE_NAME))
+                {
+                    File.Move(PERF_BACKUP_FILE_NAME, PERF_FILE_NAME);
+                }
+
                 Log("update error.");
                 Log(ex.StackTrace);
             }
