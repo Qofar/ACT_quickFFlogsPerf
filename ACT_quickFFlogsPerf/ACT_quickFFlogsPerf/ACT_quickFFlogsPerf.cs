@@ -151,22 +151,31 @@ namespace ACT_quickFFlogsPerf
 
         private string GetDpsPerf(CombatantData combatant)
         {
-            return GetPerf(EncType.DPS, combatant);
+            return GetPerf(EncType.DPS, combatant, combatant.EncDPS);
         }
 
         private string GetHpsPerf(CombatantData combatant)
         {
-            return GetPerf(EncType.HPS, combatant);
+            double absorbHPS = combatant.EncHPS;
+
+            if (absorbHPS > 0)
+            {
+                int overhealpct = Int32.Parse(combatant.GetColumnByName("OverHealPct").Replace("%", string.Empty));
+
+                double absorbHeald = combatant.Healed - Math.Round(Decimal.ToDouble(combatant.Healed * (overhealpct / 100)));
+                absorbHPS = Math.Round(absorbHeald / combatant.Parent.Duration.TotalSeconds);
+            }
+
+            return GetPerf(EncType.HPS, combatant, absorbHPS);
         }
 
 
-        private string GetPerf(EncType enc, CombatantData combatant)
+        private string GetPerf(EncType enc, CombatantData combatant, double encdpshps)
         {
             string job = combatant.GetColumnByName("Job");
             if (job == string.Empty) return string.Empty;
 
             string perfdpshps = enc == EncType.DPS ? "dps" : "hps";
-            double encdpshps = enc == EncType.DPS ? combatant.EncDPS : combatant.EncHPS;
 
             EncounterData encounter = combatant.Parent;
             string zonename = encounter.ZoneName;
