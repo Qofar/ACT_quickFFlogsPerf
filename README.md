@@ -38,3 +38,16 @@ function logsTextEffect(cell) {
     cell.style.color = "#666";
 }
 ```
+
+### ライセンス :
+
+[The MIT License (MIT)](LICENSE)
+
+### 使用ライブラリ :
+
+> DynamicJson  
+> ver 1.2.0.0 (May. 21th, 2010)
+>
+> licensed under Microsoft Public License(Ms-PL)  
+> http://neue.cc/  
+> https://dynamicjson.codeplex.com/
