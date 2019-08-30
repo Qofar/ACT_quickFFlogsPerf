@@ -1,6 +1,6 @@
 # ACT_quickFFlogsPerf
 
-### logsの[統計情報](https://www.fflogs.com/zone/statistics/29/#class=Global&spec=Astrologian&boss=65&dataset=100&dpstype=pdps)をもとにPerfを表示するプラグイン
+### logsの[統計情報](https://www.fflogs.com/zone/statistics/29/#class=Global&spec=Astrologian&boss=65&dataset=100&dpstype=pdps)をもとに8段階のPerfを表示するプラグイン
 > ACTのDPS値はpDPS、logsはaDPS(pDPS-単体シナジー)です。   
 > その点を理解した上で使用してください。
 
